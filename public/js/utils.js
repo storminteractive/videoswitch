@@ -55,3 +55,24 @@ async function isFilePresent(url) {
         return false;
     }
 }
+
+function showVersionOnLoad(version) {
+    const versionElement = document.createElement('div');
+    versionElement.id = 'version-display';
+    versionElement.style.position = 'absolute';
+    versionElement.style.top = '10px';
+    versionElement.style.right = '10px';
+    versionElement.style.backgroundColor = 'rgba(0, 0, 255, 0.7)';
+    versionElement.style.color = 'white';
+    versionElement.style.padding = '5px 10px';
+    versionElement.style.borderRadius = '5px';
+    versionElement.style.zIndex = '1000';
+    versionElement.innerText = `Version: ${version}`;
+
+    document.body.appendChild(versionElement);
+
+    // Remove the version display after 2 seconds
+    setTimeout(() => {
+        versionElement.remove();
+    }, 10000);
+}

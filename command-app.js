@@ -17,10 +17,10 @@ const rl = readline.createInterface({
 rl.on('line', (input) => {
     switch (input.trim()) {
         case '1':
-            lwt(wsClient.sendCommand({ 'action': 'show' })?'Success':'Failed');
+            lwt(wsClient.sendCommand({ 'action': 'show' })?'Command sent successfully':'Command send failed...');
             break;
         case '2':
-            lwt(wsClient.sendCommand({ 'action': 'skip' })?'Success':'Failed');
+            lwt(wsClient.sendCommand({ 'action': 'skip' })?'Command sent successfully':'Command send failed...');
             break;
         default:
             console.log('Invalid input. Press "1" for "show" or "2" for "skip".');

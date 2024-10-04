@@ -20,7 +20,7 @@ class WebSocketClient {
     }
 
     connect() {
-        lwt('Connecting to the primary app...');
+        lwt('Connecting to socket server: '+this.url);
         this.ws = new WebSocket(this.url);
 
         this.ws.on('open', () => {
