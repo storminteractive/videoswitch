@@ -1,0 +1,44 @@
+<!-- public/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Loop</title>
+    <style>
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <video id="video" autoplay loop muted>
+        <source src="videos/video1.mp4" type="video/mp4">
+    </video>
+
+    <script src="js/utils.js"></script>
+    <script src="js/websocket.js"></script>
+    <script>
+        (async () => {
+            await isFilePresent('/videos/video1.mp4');
+            await isFilePresent('/videos/video2.mp4');
+        })();
+    </script>
+</body>
+
+</html>
