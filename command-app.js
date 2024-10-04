@@ -10,7 +10,6 @@ const wsClient = new WebSocketClient(url);
 // Create a readline interface to listen for keypresses
 const rl = readline.createInterface({
     input: process.stdin,
-    output: process.stdout,
     terminal: true
 });
 
